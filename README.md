@@ -18,7 +18,7 @@ Please note that this application is for demonstration purposes only and does no
 **To run the application locally, follow these steps:**
 
 ```
-1. git clone <repository-url>
+1. git clone https://github.com/virochan999/Albums.git
 2. cd albums
 3. npm install
 4. npm run dev
