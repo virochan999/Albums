@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useDataFetch from '../hooks/useDataFetch';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AddAlbum = () => {
   const { loading, error, fetchData } = useDataFetch();
@@ -14,6 +15,7 @@ const AddAlbum = () => {
     title: false,
     body: false,
   })
+  const navigate = useNavigate()
   const errorText = 'This field is required'
 
   /* Handle the change in input values */
@@ -74,6 +76,11 @@ const AddAlbum = () => {
       })
     }
   }
+
+  /* Back button fucntionality */
+  const GoBack = () => {
+    navigate(-1)
+  }
  
   return (
     <div className='w-full flex items-center justify-center mt-8'>
@@ -127,6 +134,13 @@ const AddAlbum = () => {
           onClick={submitAlbum}
         >
           Add Album
+        </button>
+        <button
+          type='submit'
+          className='ml-4 bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
+          onClick={GoBack}
+        >
+          Go Back
         </button>
         
       </div>
